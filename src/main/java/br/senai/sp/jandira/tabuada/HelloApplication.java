@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -20,6 +22,8 @@ public class HelloApplication extends Application {
         VBox root = new VBox();
         Scene scene = new Scene(root);
 
+
+        /// /////////////////////////////////////////////////////////////
         //cabeçalho da tela
         VBox header = new VBox();
         header.setStyle("-fx-padding: 10;-fx-background-color: #0c05ff");
@@ -31,19 +35,27 @@ public class HelloApplication extends Application {
         labelsubTitulo.setStyle("-fx-text-fill: white;-fx-font-size: 10px;");
 
         header.getChildren().add(labeltitulo);
-
         header.getChildren().add(labelsubTitulo);
-
 
         //coloca header no root
         root.getChildren().add(header);
+        /// ////////////////////////////////////////////
+
+        //criando um multiplicando
+        HBox multiplicandobox = new HBox();
+        multiplicandobox.setStyle("-fx-padding: 10;-fx-background-color: #018dff");
+        Label labelmultiplicando = new Label("Multiplicando");
+        TextField textFieldmultiplicando = new TextField();
+
+        multiplicandobox.getChildren().add(labelmultiplicando);
+        multiplicandobox.getChildren().add(textFieldmultiplicando);
+        //colocar no root pra poder aparecer
+        root.getChildren().add(multiplicandobox);
 
 
         stage.setScene(scene);
         stage.setTitle("Tabuada");
         stage.show();
-
-
 
     }
 }
